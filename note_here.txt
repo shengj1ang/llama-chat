@@ -1,0 +1,16 @@
+magnet:?xt=urn:btih:ZXXDAUWYLRUXXBHUYEMS6Q5CE5WA3LVA&dn=LLaMA
+
+cd /mnt/disk2/IDC/apps/llama
+
+source venv/bin/activate
+
+cd cpu
+
+torchrun --nproc_per_node 1 example.py --ckpt_dir ../models/7B --tokenizer_path ../models/tokenizer.model
+
+torchrun --nproc_per_node 2 example.py --ckpt_dir ../models/13B --tokenizer_path ../models/tokenizer.model
+
+torchrun --nproc_per_node 1 example.py --ckpt_dir Z:/apps/llama/models/7B --tokenizer_path Z:/apps/models/tokenizer.model
+
+
+
